@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import TextCounter from './components/TextCounter';
+import { Constants } from 'expo'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello! :D</Text>
-      <StatusBar style="auto" />
+      <TextCounter />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 5,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
 });
