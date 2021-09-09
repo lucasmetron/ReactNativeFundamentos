@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
-
+import { View, Text, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import { FlatList } from 'react-native-web';
 
 export default function TextCounter(props) {
 
     return (
+
         <View>
             <TextInput
                 multiline={true}
@@ -16,5 +17,6 @@ export default function TextCounter(props) {
             />
             <Text>Total: 20/100</Text>
         </View>
+
     );
 }

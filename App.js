@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TextCounter from './components/TextCounter';
-import { Constants } from 'expo'
+import Constants from 'expo-status-bar'
 
 export default function App() {
   return (
@@ -13,8 +13,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 5,
+    marginTop: '8%',
     paddingLeft: 15,
     paddingRight: 15,
+
   },
 });
