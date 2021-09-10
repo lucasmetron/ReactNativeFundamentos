@@ -6,7 +6,7 @@ import { Constants } from 'expo'
 export default function App() {
   return (
     <View style={styles.container}>
-      <TextCounter />
+      <TextCounter limit={20} />
     </View>
   );
 }

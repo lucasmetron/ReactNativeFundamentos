@@ -17,7 +17,7 @@ export default function TextCounter(props) {
                 }}
                 value={text}
             />
-            <Text>Total: {text.length}/100</Text>
+            <Text>Total: {text.length}/{props.limit || 100}</Text>
         </View>
 
     );
