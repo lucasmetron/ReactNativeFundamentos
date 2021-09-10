@@ -5,6 +5,13 @@ export default function TextCounter(props) {
 
     const [text, setText] = useState('');
 
+    function handleChange(event) {
+        if (text.length < props.limit) {
+            setText(event)
+        }
+
+    }
+
     return (
 
         <View>
@@ -16,6 +23,7 @@ export default function TextCounter(props) {
                     borderWidth: 1,
                 }}
                 value={text}
+                onChangeText={handleChange} //neste evento, já enviado o event.target.value
             />
             <Text>Total: {text.length}/{props.limit || 100}</Text>
         </View>

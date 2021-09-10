@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import TextCounter from './components/TextCounter';
-import { Constants } from 'expo'
 
 export default function App() {
   return (
