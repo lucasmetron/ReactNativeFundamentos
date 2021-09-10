@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import TextCounter from './components/TextCounter';
+import TodoList from './components/TodoList';
+
 
 export default function App() {
+
+  const [list, setList] = useState([])
+
   return (
     <View style={styles.container}>
-      <TextCounter limit={20} />
+      <TodoList list={list} />
     </View>
   );
 }
