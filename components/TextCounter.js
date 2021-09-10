@@ -6,7 +6,7 @@ export default function TextCounter(props) {
     const [text, setText] = useState('');
 
     function handleChange(event) {
-        if (text.length < props.limit) {
+        if (text.length <= props.limit) {
             setText(event)
         }
 
