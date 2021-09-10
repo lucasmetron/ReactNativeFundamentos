@@ -1,8 +1,9 @@
-import React from 'react';
-import { View, Text, TextInput, StyleSheet, SafeAreaView } from 'react-native';
-import { FlatList } from 'react-native-web';
+import React, { useState } from 'react';
+import { View, Text, TextInput } from 'react-native';
 
 export default function TextCounter(props) {
+
+    const [text, setText] = useState('');
 
     return (
 
@@ -14,8 +15,9 @@ export default function TextCounter(props) {
                     borderColor: 'gray',
                     borderWidth: 1,
                 }}
+                value={text}
             />
-            <Text>Total: 20/100</Text>
+            <Text>Total: {text.length}/100</Text>
         </View>
 
     );
