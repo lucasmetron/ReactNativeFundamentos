@@ -1,55 +1,61 @@
 import React, { useState } from 'react'
-import { View, Text, FlatList, Button } from 'react-native';
-
-
+import { View, Text, FlatList, Button, SafeAreaView } from 'react-native';
 
 export default function TodoList(props) {
 
-    const list = useState([
-        { id: 1, text: 'abc' },
-        { id: 2, text: 'def' }
-    ])
+    const list = useState(
+        [
+            { id: 1, text: 'abc' },
+            { id: 2, text: 'def' }
+        ]
+    )
 
-
-    function keyExtractor(item) {
-        return item.id
+    function onRemove(item) {
+        return item;
     }
 
-    function handleRow({ index, item }) {
+
+    function handleRow({ item, index }) {
         return (
-            <View style={{ flexDirection: 'row', margin: 5 }}>
-                <Text style={{ flex: 1 }}>
-                    {formatListNumber(index)} -  {item.text}
-                </Text>
-                <Button
-                    style={{ width: 100 }}
-                    title="X"
-                    color='red'
-                    onPress={() => { onRemove(item) }}
-                />
-            </View>
-        )
+
+            <SafeAreaView>
+                <View style={{ flexDirection: 'row', margin: 5, }}>
+                    <Text style={{ flex: 1 }}>
+                        {formatListNumber(index)} - {item.id}
+                    </Text>
+
+                    <Button
+                        style={{ width: 30 }}
+                        title='X'
+                        color='#731919'
+                        onPress={() => { props.onRemove ? props.onRemove(item) : onRemove(item); }}
+                    />
+
+                </View>
+
+            </SafeAreaView>
+
+        );
     }
 
-    function onRemove() {
-
-    }
 
     function formatListNumber(number) {
         const digits = 2;
-        return ('00' + (number + 1)).slice(-digits)
+        return ('0'.repeat(digits) + (number + 1)).slice(-digits);
+
     }
 
-
     return (
-        <View>
+
+        <View >
 
             <FlatList
-                data={list}
-                keyExtractor={() => { keyExtractor(list || { id: 0 }) }}
+                data={props.list ? props.list : list}
                 renderItem={handleRow}
+                keyExtractor={item => item.id}
             />
 
         </View>
+
     );
 }
