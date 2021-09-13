@@ -10,8 +10,8 @@ export default function TodoList(props) {
         ]
     )
 
-    function onRemove(item) {
-        return item;
+    function onRemove() {
+        return '';
     }
 
 
@@ -28,7 +28,7 @@ export default function TodoList(props) {
                         style={{ width: 30 }}
                         title='X'
                         color='#731919'
-                        onPress={() => { props.onRemove ? props.onRemove(item) : onRemove(item); }}
+                        onPress={() => { props.onRemove ? props.onRemove(item) : onRemove(); }}
                     />
 
                 </View>

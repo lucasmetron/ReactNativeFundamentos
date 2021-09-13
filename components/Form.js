@@ -15,7 +15,7 @@ export default function Form(props) {
             if (props.onAdd) {
                 props.onAdd(text)
             } else {
-                onAdd(text)
+                onAdd()
             }
             handleChange('')
         }
