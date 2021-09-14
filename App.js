@@ -7,24 +7,24 @@ import { TodoService } from './services/TodoService';
 
 export default function App() {
 
-  const [list, setList] = useState([]);
+  // const [list, setList] = useState([]);
 
-  // const list = useState(
-  //   [
-  //     { id: 1, text: 'abc' },
-  //     { id: 2, text: 'def' }
-  //   ]
-  // )
-  useEffect(() => {
+  const list = useState(
+    [
+      { id: 1, text: 'abc' },
+      { id: 2, text: 'def' },
+    ]
+  )
+  // useEffect(() => {
 
-    async function getInitialList() {
-      const newList = await TodoService.list()
-      return newList
-    }
+  //   async function getInitialList() {
+  //     const newList = await TodoService.list()
+  //     return newList
+  //   }
 
-    setList(getInitialList())
+  //   setList(getInitialList())
 
-  }, []);
+  // }, []);
 
   async function add(text) {
     const newItem = await TodoService.create({ text })

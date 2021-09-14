@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, TouchableOpacity, Text } from "react-native";
 
 
 export default function Form(props) {
@@ -31,11 +31,9 @@ export default function Form(props) {
                 value={text}
                 onChangeText={handleChange}
             />
-            <Button
-                title='Add'
-                color='#0062ac'
-                onPress={add}
-            />
+            <TouchableOpacity style={{ backgroundColor: '#4630EB', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10, marginBottom: 10 }}>
+                <Text style={{ color: 'white' }}>Add</Text>
+            </TouchableOpacity>
         </View>
     );
 }

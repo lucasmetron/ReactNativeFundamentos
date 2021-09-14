@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, FlatList, Button, SafeAreaView } from 'react-native';
+import { View, Text, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 
 export default function TodoList(props) {
 
@@ -24,12 +24,14 @@ export default function TodoList(props) {
                         {formatListNumber(index)} - {item.id}
                     </Text>
 
-                    <Button
-                        style={{ width: 30 }}
-                        title='X'
-                        color='#731919'
+
+
+                    <TouchableOpacity
+                        style={{ backgroundColor: '#731919', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}
                         onPress={() => { props.onRemove ? props.onRemove(item) : onRemove(); }}
-                    />
+                    >
+                        <Text style={{ color: 'white' }}>X</Text>
+                    </TouchableOpacity>
 
                 </View>
 
