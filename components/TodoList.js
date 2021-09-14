@@ -15,16 +15,14 @@ export default function TodoList(props) {
     }
 
 
-    function handleRow({ item, index }) {
+    function handleRow({ index, item, }) {
         return (
 
             <SafeAreaView>
                 <View style={{ flexDirection: 'row', margin: 5, }}>
                     <Text style={{ flex: 1 }}>
-                        {formatListNumber(index)} - {item.id}
+                        {formatListNumber(index)} - {item.text}
                     </Text>
-
-
 
                     <TouchableOpacity
                         style={{ backgroundColor: '#731919', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}
