@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 
 export default function TodoList(props) {
 
-    const list = useState(
-        [
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        setList([
             { id: 1, text: 'abc' },
             { id: 2, text: 'def' }
-        ]
-    )
+        ])
+    }, [])
 
     function onRemove() {
         return '';
     }
 
 
-    function handleRow({ index, item, }) {
+    function handleRow({ index, item }) {
         return (
 
             <SafeAreaView>
@@ -50,7 +52,7 @@ export default function TodoList(props) {
         <View >
 
             <FlatList
-                data={props.list ? props.list : list}
+                data={list}
                 renderItem={handleRow}
                 keyExtractor={item => item.id}
             />
